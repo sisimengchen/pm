@@ -1,0 +1,16 @@
+<script type="text/html" id="{{ $data.uid }}">
+	{{set style = "color: " + $data.textColor + ";"}} {{if $data.fontSize == 'small' }} {{set style = style + "font-size: 12px;" }} {{else if $data.fontSize == 'middle'}} {{set style = style + "font-size: 14px;" }} {{else if $data.fontSize == 'big' }} {{set style = style + "font-size: 18px;" }} {{/if}}
+	<section class="rules" style="{{style}};margin-top: {{$data.margin[0]}}px; margin-right: {{$data.margin[1]}}px; margin-bottom: {{$data.margin[2]}}px; margin-left: {{$data.margin[3]}}px;">
+		{{if $data.address}}
+		<img class="J-close" src="{{ $imports.getUrl($data.address) }}" /> {{else if $data.title}}
+		<h3 class="J-close" style="text-align:center;">{{$data.title}}</h3> {{/if}}
+		<ul>
+			{{set padding = $data.padding}} 
+			{{each $data.contents}}
+			<li style="padding-top: {{padding[0]}}px; padding-right: {{padding[1]}}px; padding-bottom: {{padding[2]}}px; padding-left: {{padding[3]}}px;">
+				{{$value}}
+			</li>
+			{{/each}}
+		</ul>
+	</section>
+</script>

@@ -1,0 +1,23 @@
+<!-- 正文类型 -->
+{{set styleClass = ""}}
+<!-- 大圆角 -->
+{{if $data.borderRadius}} {{set styleClass = styleClass + " borderRadius"}} {{/if}}
+<!-- 链接下划线 -->
+{{if $data.noUL}} {{set styleClass = styleClass + " noUL"}} {{/if}}
+<!-- 首行缩进 -->
+{{if $data.retract}} {{set styleClass = styleClass + " retract"}} {{/if}}
+<!-- 大行距 -->
+{{if $data.bigLH}} {{set styleClass = styleClass + " bigLH"}} {{/if}}
+<!-- 大段距 -->
+{{if $data.bigPD}} {{set styleClass = styleClass + " bigPD"}} {{/if}}
+<section id="{{ $data.uid }}" class="{{ $data.type.toLocaleLowerCase() }} {{styleClass}}" style="margin-top: {{$data.margin[0]}}px; margin-right: {{$data.margin[1]}}px; margin-bottom: {{$data.margin[2]}}px; margin-left: {{$data.margin[3]}}px; padding-top: {{$data.padding[0]}}px; padding-right: {{$data.padding[1]}}px; padding-bottom: {{$data.padding[2]}}px; padding-left: {{$data.padding[3]}}px; background-color:{{$data.bgColor}}">
+	<!-- 正文样式 -->
+	<!-- 布局 -->
+	{{if $data.textAlign == 'left' }} {{set style = "text-align: " + $data.textAlign + ";"}} {{else if $data.textAlign == 'center'}} {{set style = "text-align: " + $data.textAlign + ";"}} {{else if $data.textAlign == 'right' }} {{set style = "text-align: " + $data.textAlign + ";"}} {{/if}}
+	<!-- 字号 -->
+	{{if $data.fontSize == 'small' }} {{set style = style + "font-size: 12px;" }} {{else if $data.fontSize == 'middle'}} {{set style = style + "font-size: 14px;" }} {{else if $data.fontSize == 'big' }} {{set style = style + "font-size: 18px;" }} {{else if $data.fontSize == 'superbig' }} {{set style = style + "font-size: 24px;" }} {{/if}} {{set style = style + "color: " + $data.textColor + ";" }}
+	<!-- 正文内容 -->
+	{{if $data.changeLine}} {{ $imports.wrapP($data.text, style) }} {{else}}
+	<p style="{{style}}">{{$data.text}}</p>
+	{{/if}}
+</section>

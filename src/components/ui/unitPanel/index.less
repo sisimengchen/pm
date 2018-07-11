@@ -1,0 +1,69 @@
+.unit-panel {
+  position: relative;
+  clear: both;
+  font-size: 14px;
+  box-sizing: border-box;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-top: 1px solid #e7eaec;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 15px 15px 7px;
+    min-height: 48px;
+
+    .left-editor {
+      input {
+        border: 0;
+        outline: none;
+        margin-left: 5px;
+        width: 200px;
+      }
+    }
+
+    .right-editor {
+      i {
+        cursor: pointer;
+        margin-left: 15px;
+        display: none;
+      }
+
+      .collapse {
+        display: inline-block;
+      }
+
+      .move {
+        cursor: move;
+      }
+    }
+
+    .editable {
+      i {
+        display: inline-block;
+      }
+    }
+  }
+
+  .content {
+    overflow: hidden;
+    background-color: #fff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-top: 1px solid #e7eaec;
+    box-sizing: border-box;
+    height: auto;
+    opacity: 1;
+    transition: opacity, padding 0.3s ease-in-out;
+
+    &.close {
+      height: 0;
+      opacity: 0;
+      padding: 0;
+    }
+    .ant-row-flex {
+      margin-top: 8px;
+    }
+  }
+}

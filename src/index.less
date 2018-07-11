@@ -1,0 +1,29 @@
+@import "./style/normalize.less";
+@import "./style/common.less";
+@import "./fonts/iconfont.css";
+
+html,
+body,
+:global(#app) {
+  height: 100%;
+}
+
+:global(.ant-layout) {
+  min-height: 100%;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  margin: 0 auto;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}

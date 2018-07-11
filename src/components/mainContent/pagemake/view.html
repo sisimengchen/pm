@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<title>{{ $data.meta.title }}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="/public/asset/favicon.ico#pagemaker">
+	<meta name="keywords" content="{{ $data.meta.keywords }}">
+	<meta name="description" content="{{ $data.meta.desc }}">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+	<script>
+	window.desginWidth = 750;
+	window.refresh = 1;
+	(function (win, dw, refresh) {
+	    var remCalc = {},
+	        docEl = win.document.documentElement,
+	        tid;
+	    function refreshRem() {
+	        var width = docEl.getBoundingClientRect().width;
+	        if (width > 640) { width = 640 }
+	        var rem = (width * 100) / desginWidth;
+	        docEl.style.fontSize = rem + "px";
+	        remCalc.rem = rem;
+	        var actualSize = parseFloat(window.getComputedStyle(document.documentElement)["font-size"]);
+	        if (actualSize !== rem && actualSize > 0 && Math.abs(actualSize - rem) > 1) {
+	            var remScaled = rem * rem / actualSize;
+	            docEl.style.fontSize = remScaled + "px"
+	        }
+	    }
+	    function dbcRefresh() {
+	        clearTimeout(tid);
+	        tid = setTimeout(refreshRem, 100)
+	    }
+	    refresh && win.addEventListener("resize", function () { dbcRefresh() }, false);
+	    refresh && win.addEventListener("pageshow", function (e) {
+	        if (e.persisted) { dbcRefresh() }
+	    }, false);
+	    refreshRem();
+	    remCalc.refreshRem = refreshRem;
+	    remCalc.rem2px = function (d) {
+	        var val = parseFloat(d) * this.rem;
+	        if (typeof d === "string" && d.match(/rem$/)) { val += "px" }
+	        return val
+	    };
+	    remCalc.px2rem = function (d) {
+	        var val = parseFloat(d) / this.rem;
+	        if (typeof d === "string" && d.match(/px$/)) { val += "rem" }
+	        return val
+	    };
+	    win.remCalc = remCalc
+	})(window, window.desginWidth, window.refresh);
+	window.__data = {{ $imports.toJS($data.units) }} || [];
+	{{if $data.isPreview }}console.log(window.__data);{{/if}}
+    </script>
+	{{each $data.cssList}}
+	<link type="text/css" rel="stylesheet" href="{{ $value }}" />
+	{{/each}}
+	{{if $data.inlineCss}}
+	<style type="text/css">
+	{{ $data.inlineCss }}
+	</style>
+	{{/if}}
+</head>
+<body style="background-color: {{ $data.meta.bgColor }}">
+	{{if $data.meta.address }}
+	<img style="display:none;" src="{{$data.meta.address}}">
+	{{/if}}
+	<div id="main">
+	{{if $data.isPreview }}
+	<div id="scroller">
+	    <pagemaker></pagemaker>
+	</div>
+	{{else}}
+		<pagemaker></pagemaker>
+	{{/if}}
+	</div>
+	{{each $data.jsList}}
+	<script type="text/javascript" charset="utf-8" src="{{ $value }}"></script>
+	{{/each}}
+	{{if $data.inlineJs}}
+	<script type="text/javascript" charset="utf-8">
+	{{ $data.inlineJs }}
+	</script>
+	{{/if}}
+</body>
+</html>

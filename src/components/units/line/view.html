@@ -1,0 +1,4 @@
+<section id="{{ $data.uid }}" class="line" style="margin-top: {{$data.margin[0]}}px; margin-right: {{$data.margin[1]}}px; margin-bottom: {{$data.margin[2]}}px; margin-left: {{$data.margin[3]}}px; ">
+	{{set style = 'height: 1px; border: none; margin: 0; '}} {{if $data.lineType == 'solid'}} {{set style = style + 'border-top: 1px solid ' + $data.color }} {{else if $data.lineType == 'dotted'}} {{set style = style + 'border-top: 1px dotted ' + $data.color }} {{else if $data.lineType == 'dashed'}} {{set style = style + 'border-top: 1px dashed ' + $data.color }} {{/if}}
+	<hr style="{{style}}" />
+</section>

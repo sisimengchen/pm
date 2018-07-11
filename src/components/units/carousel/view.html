@@ -1,0 +1,13 @@
+<section id="{{ $data.uid }}" class="{{ $data.type.toLocaleLowerCase() }}">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			{{each $data.contents}}
+			<div class="swiper-slide">
+				<a href="{{ $value.url || 'javascript:void(0);'}}">
+					<img src="{{ $imports.getUrl($value.address) }}" >
+				</a>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</section>

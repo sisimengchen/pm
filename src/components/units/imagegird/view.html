@@ -1,0 +1,13 @@
+{{if $data.girdStyle == 'horizontal2'}} {{set styleClass = "horizontal2"}} {{else if $data.girdStyle == 'vertical2'}} {{set styleClass = "vertical2"}} {{else}} {{set styleClass = "vertical3"}} {{/if}}
+<section id="{{ $data.uid }}" class="imagegird {{styleClass}}">
+	<ul class="f-cb">
+		{{each $data.contents}}
+		<li class="f-fl">
+			<a href="{{ $value.link || 'javascript:void(0);'}}" class="have-link">
+				<img src="{{ $imports.getUrl($value.address) }}" />
+			</a>
+			<p>{{$value.title}}</p>
+		</li>
+		{{/each}}
+	</ul>
+</section>

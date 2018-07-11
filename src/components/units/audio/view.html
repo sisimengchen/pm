@@ -1,0 +1,5 @@
+<section id="{{ $data.uid }}" class="{{ $data.type.toLocaleLowerCase() }}">
+	<audio autoplay="autoplay" style="{{ style }}">
+		<source src="{{ $imports.getUrl($data.address) }}" type="audio/ogg" />
+	</audio>
+</section>

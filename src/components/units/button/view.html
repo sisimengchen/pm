@@ -1,0 +1,17 @@
+<!-- 按钮类型 -->
+<section id="{{ $data.uid }}" class="button" style="margin-top: {{$data.margin[0]}}px; margin-right: {{$data.margin[1]}}px; margin-bottom: {{$data.margin[2]}}px; margin-left: {{$data.margin[3]}}px">
+	{{if $data.style == "custom" }} 
+	{{set style = "border-radius: 0;" }} {{set imgstyle = "width: 100%" }}
+	<a href="{{ $data.url }}" data-cmd="{{ $data.appOrder }}" style="{{ style }}">
+		<img src="{{ $imports.getUrl($data.address) }}" style="{{imgstyle}}" />
+	</a>
+	{{else}} 
+	{{set style = "background-color: " +$data.bgColor + "; color: " + $data.textColor + ";" }} 
+	{{if $data.bigRadius}} 
+	{{set style = style + 'border-radius: 3rem;' }} 
+	{{else}} 
+	{{set style = style + 'border-radius: 0.5rem;' }} 
+	{{/if}} 
+	{{set style = style + "height:" + $data.height + "px; line-height:" + $data.height +"px;font-size:" + $data.fontSize + "px;"}}
+	<a href="{{ $data.url }}" data-cmd="{{ $data.appOrder }}" style="{{ style }}">{{ $data.txt }}</a> {{/if}}
+</section>

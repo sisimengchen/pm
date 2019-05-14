@@ -41,7 +41,7 @@ const PropComponet = function({ unitIndex, unit, propName = '' }) {
         {getOptions(propConfig.options)}
       </Select>
     );
-  } else if (propName.toLocaleLowerCase().endsWith('color')) {
+  } else if (propConfig.display === 'color') {
     children = (
       <CompactPicker
         color={unit.get(propName)}

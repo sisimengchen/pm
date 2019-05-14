@@ -6,10 +6,10 @@ const PROP_CONFIG_MAP = {
   title: { label: '标题' },
   keywords: { label: '关键字' },
   desc: { label: '描述' },
-  backgroundColor: { label: '背景色' },
+  backgroundColor: { label: '背景色', display: 'color' },
   text: { label: '文案' },
   href: { label: '链接' },
-  color: { label: '字色' },
+  color: { label: '字色', display: 'color' },
   fontSize: { label: '字号' },
   textAlign: {
     label: '对齐方式',

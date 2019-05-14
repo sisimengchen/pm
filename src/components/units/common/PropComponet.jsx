@@ -34,7 +34,7 @@ const PropComponet = function({ unitIndex, unit, propName = '' }) {
   } else if (propConfig.display === 'select' && propConfig.options && propConfig.options.length) {
     children = (
       <Select
-        placeholder="请选择商家"
+        placeholder={`请选择${label}`}
         value={unit.get(propName)}
         onSelect={value => updateUnit(unitIndex, propName, value)}
       >

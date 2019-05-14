@@ -31,7 +31,8 @@ class UnitsList extends React.Component {
           <SubMenu
             title={
               <span>
-                <Icon type="book" />文字单元
+                <Icon type="book" />
+                文字单元
               </span>
             }
           >
@@ -63,7 +64,8 @@ class UnitsList extends React.Component {
           <SubMenu
             title={
               <span>
-                <Icon type="video-camera" />多媒体单元
+                <Icon type="video-camera" />
+                多媒体单元
               </span>
             }
           >
@@ -83,7 +85,8 @@ class UnitsList extends React.Component {
           <SubMenu
             title={
               <span>
-                <Icon type="api" />复合单元
+                <Icon type="api" />
+                复合单元
               </span>
             }
           >
@@ -99,7 +102,8 @@ class UnitsList extends React.Component {
           <SubMenu
             title={
               <span>
-                <Icon type="database" />统计单元
+                <Icon type="database" />
+                统计单元
               </span>
             }
           >
@@ -115,7 +119,8 @@ class UnitsList extends React.Component {
           <SubMenu
             title={
               <span>
-                <Icon type="code" />高级单元
+                <Icon type="code" />
+                高级单元
               </span>
             }
           >

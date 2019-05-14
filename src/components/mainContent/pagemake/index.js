@@ -1,4 +1,5 @@
 import template from './template-web.js';
+
 import Configs from './config.js';
 import ViewCore from './view.html';
 
@@ -38,7 +39,7 @@ const pageMake = function(units, isPreview) {
   const cssList = [];
   for (let i = 0; i < units.length; i++) {
     const unit = units[i];
-    const type = unit.type;
+    const { type } = unit;
     const config = Configs[type];
     if (type === 'META') {
       meta = unit;

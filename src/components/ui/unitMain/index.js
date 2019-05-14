@@ -80,7 +80,11 @@ class UnitMain extends React.Component {
         case 'QRCODE':
           return <UnitQrcode key={uid} id={index} data={item} />;
         default:
-          return <div key={uid} id={index}>未知组件</div>
+          return (
+            <div key={uid} id={index}>
+              未知组件
+            </div>
+          );
       }
     });
   }
@@ -90,7 +94,7 @@ class UnitMain extends React.Component {
   handleMouseLeave(e) {}
 
   handleMouseDown(e) {
-    if (!this.state.dragFlag && e.target.className.indexOf('move') > -1) {
+    if (!this.state.dragFlag && e.target.className && e.target.className.indexOf('move') > -1) {
       this.panel = e.target.offsetParent;
       console.log(e.target);
       console.log(this.panel);

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import pagemak from '../pagemake/index.js';
+// import pagemak from '../pagemake/index.js';
 class Preview extends React.PureComponent {
   static propTypes = {
     unit: ImmutablePropTypes.list
@@ -30,7 +30,7 @@ class Preview extends React.PureComponent {
     const units = unit.toJS();
     if (doc && doc.readyState === 'complete') {
       doc.open();
-      doc.write(pagemak(units, true));
+      // doc.write(pagemak(units, true));
       doc.close();
     } else {
       setTimeout(this.renderFrameContents, 0);

@@ -21,7 +21,7 @@ const PropComponet = function({ unitIndex, unit, propName = '' }) {
   }
   const label = propConfig.label || '未知';
   let children = null;
-  if (propConfig.display === 'code') {
+  if (propConfig.display === 'document') {
     const { mode } = propConfig;
     children = (
       <Avatar

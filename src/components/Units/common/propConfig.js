@@ -38,22 +38,22 @@ const PROP_CONFIG_MAP = {
   },
   javascript: {
     label: 'javascript代码',
-    display: 'code',
+    display: 'document',
     mode: 'javascript'
   },
   css: {
     label: 'css代码',
-    display: 'code',
+    display: 'document',
     mode: 'css'
   },
   html: {
     label: 'html代码',
-    display: 'code',
+    display: 'document',
     mode: 'text/html'
   },
   markdown: {
     label: 'markdown代码',
-    display: 'code',
+    display: 'document',
     mode: 'markdown'
   }
 };

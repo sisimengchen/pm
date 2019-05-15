@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import ProfessionalCode from './index';
+import ProfessionalDocument from './index';
 import { Form, Button, Drawer, message } from 'antd';
 import actions from 'redux/actions';
 import './index.less';
 
-class ProfessionalCodeDrawer extends Component {
+class ProfessionalDocumentDrawer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +17,7 @@ class ProfessionalCodeDrawer extends Component {
       mode: '',
       visible: false
     };
-    this.professionalCode = null;
+    this.professionalDocument = null;
   }
 
   show(data = {}) {
@@ -48,7 +48,7 @@ class ProfessionalCodeDrawer extends Component {
 
   onSubmit = () => {
     const { unitIndex, unit, propName, propValue } = this.state;
-    unitIndex > -1 && actions.updateUnit(unitIndex, propName, this.professionalCode.getValue());
+    unitIndex > -1 && actions.updateUnit(unitIndex, propName, this.professionalDocument.getValue());
     this.hide();
   };
 
@@ -56,7 +56,7 @@ class ProfessionalCodeDrawer extends Component {
     const { visible, label, unit, propName, propValue, mode } = this.state;
     return (
       <Drawer
-        className="components-professional-code-drawer"
+        className="components-professional-document-drawer"
         title={label}
         width={640}
         placement="left"
@@ -66,12 +66,12 @@ class ProfessionalCodeDrawer extends Component {
         }}
       >
         {unit && propName && (
-          <ProfessionalCode
+          <ProfessionalDocument
             key={unit.get('uid')}
             value={propValue}
             mode={mode}
             ref={(ref) => {
-              this.professionalCode = ref;
+              this.professionalDocument = ref;
             }}
           />
         )}
@@ -95,17 +95,17 @@ class ProfessionalCodeDrawer extends Component {
   }
 }
 
-let professionalCodeDrawer = null;
+let professionalDocumentDrawer = null;
 
 const dom = document.createElement('div');
 document.body.append(dom);
 ReactDOM.render(
-  <ProfessionalCodeDrawer
+  <ProfessionalDocumentDrawer
     ref={(ref) => {
-      professionalCodeDrawer = ref;
+      professionalDocumentDrawer = ref;
     }}
   />,
   dom
 );
 
-export default professionalCodeDrawer;
+export default professionalDocumentDrawer;

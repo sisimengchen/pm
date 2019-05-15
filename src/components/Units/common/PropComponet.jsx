@@ -5,7 +5,7 @@ import actions from 'redux/actions';
 import { getOptions } from './index';
 import { propName2Config } from './propConfig';
 import professionalUploadModal from 'components/Professional/Upload/modal';
-import professionalCodeDrawer from 'components/Professional/Code/drawer';
+import professionalDocumentDrawer from 'components/Professional/Document/drawer';
 
 const updateUnit = function(unitIndex, propName, propValue, index) {
   unitIndex > -1 && actions.updateUnit(unitIndex, propName, propValue, index);
@@ -27,7 +27,7 @@ const PropComponet = function({ unitIndex, unit, propName = '' }) {
       <Avatar
         style={{ backgroundColor: unit.get(propName) ? 'red' : null, cursor: 'pointer' }}
         onClick={() => {
-          professionalCodeDrawer.show({ label, unitIndex, unit, propName, mode });
+          professionalDocumentDrawer.show({ label, unitIndex, unit, propName, mode });
         }}
       >
         {unit.get(propName) ? '编辑' : '添加'}

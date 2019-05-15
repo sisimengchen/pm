@@ -24,7 +24,7 @@ import 'codemirror/addon/fold/indent-fold';
 import 'codemirror/addon/fold/markdown-fold';
 import 'codemirror/addon/fold/comment-fold';
 
-export default class ProfessionalCode extends Component {
+export default class ProfessionalDocument extends Component {
   static defaultProps = {
     value: '',
     keyMap: 'sublime',
@@ -62,7 +62,7 @@ export default class ProfessionalCode extends Component {
   render() {
     return (
       <div
-        className="components-professional-code"
+        className="components-professional-document"
         ref={(ref) => {
           this.dom = ref;
         }}

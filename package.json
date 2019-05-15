@@ -58,7 +58,7 @@
     "@babel/runtime-corejs2": "^7.4.4",
     "antd": "^3.17.0",
     "axios": "^0.18.0",
-    "codemirror": "^5.33.0",
+    "codemirror": "^5.46.0",
     "core-js": "^2.6.5",
     "history": "^4.9.0",
     "immutable": "^3.8.2",

@@ -36,7 +36,38 @@ const UnitFactory = Immutable.fromJS({
     src: '',
     backgroundColor: 'transparent',
     margin: [0, 0, 0, 0],
-    padding: [0, 0, 0, 0]
+    padding: [0, 0, 0, 0],
+    width: '100',
+    height: '100',
+    javascript: ''
+  },
+  JAVACRIPT: {
+    unitType: 'JAVACRIPT',
+    unitName: 'javascript',
+    editable: true,
+    unique: false,
+    javascript: ''
+  },
+  CSS: {
+    unitType: 'CSS',
+    unitName: 'css',
+    editable: true,
+    unique: false,
+    css: ''
+  },
+  HTML: {
+    unitType: 'HTML',
+    unitName: 'html',
+    editable: true,
+    unique: false,
+    html: ''
+  },
+  MARKDOWN: {
+    unitType: 'MARKDOWN',
+    unitName: 'markdown',
+    editable: true,
+    unique: false,
+    markdown: ''
   }
 });
 

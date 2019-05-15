@@ -123,7 +123,7 @@ class UnitMenu extends PureComponent {
         <span>章鱼统计</span>
       </Menu.Item> */}
           </Menu.SubMenu>
-          <Menu.SubMenu
+          {/* <Menu.SubMenu
             title={
               <span>
                 <Icon type="code" />
@@ -138,6 +138,31 @@ class UnitMenu extends PureComponent {
             <Menu.Item key="CODE">
               <Icon type="gitlab" />
               <span>前端代码</span>
+            </Menu.Item>
+          </Menu.SubMenu> */}
+          <Menu.SubMenu
+            title={
+              <span>
+                <Icon type="code" />
+                <span>文档</span>
+              </span>
+            }
+          >
+            <Menu.Item key="JAVACRIPT">
+              <Icon type="github" />
+              <span>javascript</span>
+            </Menu.Item>
+            <Menu.Item key="CSS">
+              <Icon type="sketch" />
+              <span>css</span>
+            </Menu.Item>
+            <Menu.Item key="HTML">
+              <Icon type="html5" />
+              <span>html</span>
+            </Menu.Item>
+            <Menu.Item key="MARKDOWN">
+              <Icon type="file-markdown" />
+              <span>markdown</span>
             </Menu.Item>
           </Menu.SubMenu>
         </Menu>

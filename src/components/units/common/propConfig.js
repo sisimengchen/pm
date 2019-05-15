@@ -26,8 +26,36 @@ const PROP_CONFIG_MAP = {
     label: '源URL',
     display: 'upload'
   },
-  padding: { label: '内边距', display: 'inputgroup', labels: ['上内边距', '右内边距', '下内边距', '左内边距'] },
-  margin: { label: '外边距', display: 'inputgroup', labels: ['上外边距', '右外边距', '下外边距', '左外边距'] }
+  padding: { label: '内边距', display: 'inputGroup', labels: ['上内边距', '右内边距', '下内边距', '左内边距'] },
+  margin: { label: '外边距', display: 'inputGroup', labels: ['上外边距', '右外边距', '下外边距', '左外边距'] },
+  width: {
+    label: '宽度',
+    display: 'inputNumber'
+  },
+  height: {
+    label: '高度',
+    display: 'inputNumber'
+  },
+  javascript: {
+    label: 'javascript代码',
+    display: 'code',
+    mode: 'javascript'
+  },
+  css: {
+    label: 'css代码',
+    display: 'code',
+    mode: 'css'
+  },
+  html: {
+    label: 'html代码',
+    display: 'code',
+    mode: 'text/html'
+  },
+  markdown: {
+    label: 'markdown代码',
+    display: 'code',
+    mode: 'markdown'
+  }
 };
 
 export const propName2Config = (propName = '') => PROP_CONFIG_MAP[`${propName}`];

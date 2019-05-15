@@ -4,10 +4,11 @@ import ProfessionalUpload from './index';
 import { Form, Input, Modal, message } from 'antd';
 import actions from 'redux/actions';
 
-class UploadModal extends Component {
+class ProfessionalUploadModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      label: undefined,
       unitIndex: -1,
       unit: undefined,
       propName: undefined,
@@ -18,8 +19,9 @@ class UploadModal extends Component {
   }
 
   show(data = {}) {
-    const { unitIndex, unit, propName } = data;
+    const { label, unitIndex, unit, propName } = data;
     this.setState({
+      label,
       unitIndex,
       unit,
       propName,
@@ -31,6 +33,7 @@ class UploadModal extends Component {
 
   hide() {
     this.setState({
+      label: undefined,
       unitIndex: -1,
       unit: undefined,
       propName: undefined,
@@ -46,7 +49,7 @@ class UploadModal extends Component {
     }
     const { unitIndex, unit, propName, propValue } = this.state;
     unitIndex > -1 && actions.updateUnit(unitIndex, propName, propValue);
-    this.setState({ visible: false });
+    this.hide();
   };
 
   isUploading() {
@@ -59,18 +62,18 @@ class UploadModal extends Component {
   }
 
   render() {
-    const { visible, unit, propName, propValue, list = [] } = this.state;
+    const { visible, label, unit, propName, propValue, list = [] } = this.state;
     return (
       <Modal
         className="components-professional-upload-modal"
-        title="源URL编辑"
+        title={label}
         visible={visible}
         onOk={this.onSubmit}
         onCancel={() => {
           if (this.isUploading()) {
             return;
           }
-          this.setState({ visible: false });
+          this.hide();
         }}
         okText="确认"
         cancelText="取消"
@@ -103,18 +106,17 @@ class UploadModal extends Component {
   }
 }
 
-let uploadModal = null;
+let professionalUploadModal = null;
 
 const dom = document.createElement('div');
 document.body.append(dom);
 ReactDOM.render(
-  <UploadModal
+  <ProfessionalUploadModal
     ref={(ref) => {
-      uploadModal = ref;
+      professionalUploadModal = ref;
     }}
   />,
   dom
 );
 
-window.uploadModal = uploadModal;
-export default uploadModal;
+export default professionalUploadModal;

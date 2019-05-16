@@ -72,6 +72,10 @@ const PROP_CONFIG_MAP = {
   password: {
     label: '密码',
     display: 'password'
+  },
+  enumeration: {
+    label: '枚举',
+    display: 'enumeration'
   }
 };
 

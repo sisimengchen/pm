@@ -1,10 +1,11 @@
-import React from 'react';
-import { Form, Input, InputNumber, Select, Avatar, DatePicker, Switch } from 'antd';
+import React, { Fragment } from 'react';
+import { Form, Input, InputNumber, Select, Avatar, DatePicker, Switch, Tag } from 'antd';
 import moment from 'moment';
 import { CompactPicker } from 'react-color';
 import actions from 'redux/actions';
 import { getOptions } from './index';
 import { propName2Config } from './propConfig';
+import EnumPropCompent from './EnumPropCompent';
 import professionalUploadModal from 'components/professional/Upload/modal';
 import professionalDocumentDrawer from 'components/professional/Document/drawer';
 
@@ -22,7 +23,9 @@ const PropComponet = function({ unitIndex, unit, propName = '' }) {
   }
   const label = propConfig.label || '未知';
   let children = null;
-  if (propConfig.display === 'password') {
+  if (propConfig.display === 'enumeration') {
+    children = <EnumPropCompent unitIndex={unitIndex} unit={unit} propName={propName} />;
+  } else if (propConfig.display === 'password') {
     children = (
       <Input.Password
         password
@@ -99,7 +102,7 @@ const PropComponet = function({ unitIndex, unit, propName = '' }) {
             placeholder={`${propConfig.labels[index]}`}
             value={item}
             onChange={(event) => {
-              updateUnit(unitIndex, propName, event.target.value, index);
+              updateUnit(unitIndex, propName, event.target.value, `${index}`);
             }}
           />
         ))}

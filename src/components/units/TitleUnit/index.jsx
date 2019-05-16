@@ -12,6 +12,7 @@ const TitleUnit = props => (
     <PropComponet key="textAlign" propName="textAlign" {...props} />
     <PropComponet key="margin" propName="margin" {...props} />
     <PropComponet key="padding" propName="padding" {...props} />
+    <PropComponet key="enumeration" propName="enumeration" {...props} />
   </Form>
 );
 

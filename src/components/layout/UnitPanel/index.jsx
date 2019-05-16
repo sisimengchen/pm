@@ -73,7 +73,7 @@ class UnitPanel extends PureComponent {
             }
             extra={
               <Fragment>
-                {editable ? <Icon type="drag" /> : null}
+                {/* {editable ? <Icon type="drag" /> : null} */}
                 {editable ? (
                   <Icon
                     type="delete"

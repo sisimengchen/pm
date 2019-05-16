@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Loadable from 'react-loadable';
-import { Instagram } from 'react-content-loader';
+import { List } from 'react-content-loader';
 
 const getComponent = loader => ({
   loader: loader,
-  loading: Instagram
+  loading: List
 });
 
 const routes = [

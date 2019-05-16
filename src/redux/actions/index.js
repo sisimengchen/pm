@@ -6,7 +6,7 @@ const actions = {
   // 删除单元
   removeUnit: unitIndex => dispatch({ type: 'REMOVE_UNIT', unitIndex }),
   // 更新单元
-  updateUnit: (unitIndex, propName, propValue, index = -1) => dispatch({ type: 'UPDATE_UNIT', unitIndex, propName, propValue, index }),
+  updateUnit: (unitIndex, propName, propValue, index) => dispatch({ type: 'UPDATE_UNIT', unitIndex, propName, propValue, index }),
   // 复制单元
   copyUnit: unitIndex => dispatch({ type: 'COPY_UNIT', unitIndex }),
   // 移动单元

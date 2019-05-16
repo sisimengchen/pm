@@ -25,7 +25,8 @@ const UnitFactory = Immutable.fromJS({
     fontSize: 12,
     textAlign: 'center',
     margin: [0, 0, 0, 0],
-    padding: [0, 0, 0, 0]
+    padding: [0, 0, 0, 0],
+    enumeration: ['123', '456', '222']
   },
   IMAGE: {
     unitType: 'IMAGE',
@@ -404,8 +405,12 @@ export default (state = defaultState.units, action) => {
       break;
     }
     case 'UPDATE_UNIT': {
-      if (action.index > -1) {
-        newState = state.setIn([action.unitIndex, action.propName, action.index], action.propValue);
+      if (action.index) {
+        if (action.index.charAt(0) === '-') {
+          newState = state.deleteIn([action.unitIndex, action.propName, -parseInt(action.index, 10)]);
+        } else {
+          newState = state.setIn([action.unitIndex, action.propName, parseInt(action.index, 10)], action.propValue);
+        }
       } else {
         newState = state.setIn([action.unitIndex, action.propName], action.propValue);
       }

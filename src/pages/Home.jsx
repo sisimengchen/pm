@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Layout, Icon, Menu, Row, Col } from 'antd';
-import MainHeader from 'components/Layout/MainHeader';
-import UnitsMenu from 'components/Layout/UnitsMenu';
-import UnitsContent from 'components/Layout/UnitsContent';
-import UnitsPreview from 'components/Layout/UnitsPreview';
+import MainHeader from 'components/layout/MainHeader';
+import UnitsMenu from 'components/layout/UnitsMenu';
+import UnitsContent from 'components/layout/UnitsContent';
+import UnitsPreview from 'components/layout/UnitsPreview';
 
 export default class HomePage extends PureComponent {
   constructor(props) {

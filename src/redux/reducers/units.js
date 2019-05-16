@@ -36,10 +36,7 @@ const UnitFactory = Immutable.fromJS({
     src: '',
     backgroundColor: 'transparent',
     margin: [0, 0, 0, 0],
-    padding: [0, 0, 0, 0],
-    width: '100',
-    height: '100',
-    javascript: ''
+    padding: [0, 0, 0, 0]
   },
   JAVACRIPT: {
     unitType: 'JAVACRIPT',
@@ -47,6 +44,13 @@ const UnitFactory = Immutable.fromJS({
     editable: true,
     unique: false,
     javascript: ''
+  },
+  JSON: {
+    unitType: 'JSON',
+    unitName: 'json',
+    editable: true,
+    unique: false,
+    json: ''
   },
   CSS: {
     unitType: 'CSS',

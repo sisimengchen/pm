@@ -55,6 +55,23 @@ const PROP_CONFIG_MAP = {
     label: 'markdown代码',
     display: 'document',
     mode: 'markdown'
+  },
+  json: {
+    label: 'json代码',
+    display: 'document',
+    mode: 'javascript'
+  },
+  timestamp: {
+    label: '时间戳',
+    display: 'date'
+  },
+  boolean: {
+    label: '布尔值',
+    display: 'boolean'
+  },
+  password: {
+    label: '密码',
+    display: 'password'
   }
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Input, InputNumber, Select, Avatar } from 'antd';
+import { Form, Input, InputNumber, Select, Avatar, DatePicker, Switch } from 'antd';
+import moment from 'moment';
 import { CompactPicker } from 'react-color';
 import actions from 'redux/actions';
 import { getOptions } from './index';
@@ -21,7 +22,33 @@ const PropComponet = function({ unitIndex, unit, propName = '' }) {
   }
   const label = propConfig.label || '未知';
   let children = null;
-  if (propConfig.display === 'document') {
+  if (propConfig.display === 'password') {
+    children = (
+      <Input.Password
+        password
+        placeholder={`请输入${label}`}
+        value={unit.get(propName)}
+        onChange={event => updateUnit(unitIndex, propName, event.target.value)}
+      />
+    );
+  } else if (propConfig.display === 'boolean') {
+    children = (
+      <Switch
+        placeholder={`请选择${label}`}
+        checked={unit.get(propName)}
+        onChange={checked => updateUnit(unitIndex, propName, checked)}
+      />
+    );
+  } else if (propConfig.display === 'date') {
+    children = (
+      <DatePicker
+        showTime
+        placeholder={`请选择${label}`}
+        value={moment(unit.get(propName))}
+        onOk={value => updateUnit(unitIndex, propName, value.valueOf())}
+      />
+    );
+  } else if (propConfig.display === 'document') {
     const { mode } = propConfig;
     children = (
       <Avatar

@@ -7,6 +7,7 @@ const UnitComponentMap = {
   META: require('./MetaUnit').default,
   TITLE: require('./TitleUnit').default,
   IMAGE: require('./ImageUnit').default,
+  JSON: require('./JsonUnit').default,
   JAVACRIPT: require('./JavascriptUnit').default,
   CSS: require('./CssUnit').default,
   HTML: require('./HtmlUnit').default,

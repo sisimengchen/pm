@@ -148,6 +148,10 @@ class UnitMenu extends PureComponent {
               </span>
             }
           >
+            <Menu.Item key="JSON">
+              <Icon type="gitlab" />
+              <span>json</span>
+            </Menu.Item>
             <Menu.Item key="JAVACRIPT">
               <Icon type="github" />
               <span>javascript</span>
